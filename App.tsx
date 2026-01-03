@@ -6,7 +6,7 @@ import { Feature, Plan } from './types';
 
 const App: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
-  const linkedInUrl = "https://www.linkedin.com/company/retailnexa";
+  const linkedInUrl = "https://www.linkedin.com/company/retailnexa/";
   const contactEmail = "retailnexa.ai@gmail.com";
   const [leadForm, setLeadForm] = useState({
     fullName: "",
