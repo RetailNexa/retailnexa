@@ -12,6 +12,9 @@ export interface Feature {
 export interface Plan {
   name: string;
   price: string;
+  originalPrice?: string;
+  promoLabel?: string;
+  priceNote?: string;
   features: string[];
   cta: string;
   highlighted?: boolean;

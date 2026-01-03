@@ -25,7 +25,7 @@ const DashboardPreview: React.FC = () => {
           <div className="h-2 w-32 bg-slate-800 rounded-full overflow-hidden">
             <div className="h-full bg-teal-500 w-3/4 animate-pulse"></div>
           </div>
-          <span className="text-slate-400 text-[10px] font-bold tracking-[0.2em] uppercase">System Live: 99.9% Uptime</span>
+          <span className="text-slate-400 text-[10px] font-bold tracking-[0.2em] uppercase">AI Engine Live • 99.9% Uptime</span>
         </div>
         <div className="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-teal-400 font-bold text-xs">JD</div>
       </div>
@@ -64,8 +64,8 @@ const DashboardPreview: React.FC = () => {
         <div className="md:col-span-3 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm relative overflow-hidden">
           <div className="flex justify-between items-center mb-8">
             <div>
-              <h4 className="text-lg font-black text-slate-800">Operational Integrity</h4>
-              <p className="text-xs text-slate-500 font-medium">Real-time mapping: POS Transactions vs. Bank Settle</p>
+              <h4 className="text-lg font-black text-slate-800">AI Integrity Monitor</h4>
+              <p className="text-xs text-slate-500 font-medium">Real-time mapping: POS transactions vs. bank settlement</p>
             </div>
             <div className="flex gap-4">
               <div className="flex items-center gap-2">

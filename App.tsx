@@ -66,22 +66,22 @@ const App: React.FC = () => {
   const features: Feature[] = [
     {
       id: 1,
-      title: "Revenue Integrity",
-      description: "Auto-reconcile every swipe and cash sale against bank deposits to eliminate leakage.",
+      title: "AI Revenue Integrity",
+      description: "AI auto-reconciles every swipe and cash sale against bank deposits to eliminate leakage.",
       icon: <ChartIcon className="w-8 h-8 text-teal-600" />,
       details: ["POS vs Bank Settlement", "Cash Audit Automation", "Missing Deposit Alerts"]
     },
     {
       id: 2,
-      title: "Inventory Autopilot",
-      description: "Smart monitoring that anticipates demand, manages vendors, and flags shrinkage.",
+      title: "AI Inventory Autopilot",
+      description: "AI monitoring anticipates demand, manages vendors, and flags shrinkage before it hits margins.",
       icon: <BotIcon className="w-8 h-8 text-cyan-600" />,
       details: ["Demand Forecasting", "Price Comparison", "Theft Pattern Detection"]
     },
     {
       id: 3,
-      title: "Owner OS",
-      description: "A centralized command center that handles compliance, documents, and customer calls.",
+      title: "AI Owner OS",
+      description: "An AI command center that handles compliance, documents, and customer calls.",
       icon: <ShieldIcon className="w-8 h-8 text-emerald-600" />,
       details: ["24/7 AI Phone Agent", "License Renewal Alerts", "Encrypted Document Vault"]
     }
@@ -91,19 +91,26 @@ const App: React.FC = () => {
     {
       name: "Basic",
       price: "$49",
+      originalPrice: "$99",
+      promoLabel: "Offer",
       features: ["Email & CSV sales parsing", "Unified dashboard", "Weekly reports", "Standard support"],
       cta: "Request Demo"
     },
     {
       name: "Pro",
       price: "$99",
+      originalPrice: "$199",
+      promoLabel: "Offer",
       features: ["POS integration", "Inventory automation", "AI business assistant", "Deposit reconciliation", "Priority support"],
       cta: "Request Demo",
       highlighted: true
     },
     {
       name: "Enterprise",
-      price: "$199+",
+      price: "$299+",
+      originalPrice: "$599+",
+      promoLabel: "Offer",
+      priceNote: "Pricing changes as you add premium features.",
       features: ["Multi-location support", "Full automation workflows", "Camera + phone integrations", "White-label options", "Dedicated onboarding"],
       cta: "Talk to Sales"
     }
@@ -116,12 +123,15 @@ const App: React.FC = () => {
         <div className="container mx-auto px-6 flex justify-between items-center">
           <div className="flex items-center gap-3 group cursor-pointer">
             <div className="w-12 h-12 bg-teal-600 rounded-2xl flex items-center justify-center text-white font-black text-2xl italic shadow-[0_8px_16px_-4px_rgba(13,148,136,0.4)] group-hover:scale-105 transition-all">R</div>
-            <span className="text-2xl font-black tracking-tighter text-slate-900">RetailNexa</span>
+            <div className="flex items-center gap-2">
+              <span className="text-2xl font-black tracking-tighter text-slate-900">RetailNexa</span>
+              <span className="px-2.5 py-1 rounded-full bg-slate-900 text-white text-[10px] font-black uppercase tracking-[0.25em]">AI</span>
+            </div>
           </div>
           <div className="hidden md:flex items-center gap-10 text-xs font-bold uppercase tracking-widest text-slate-500">
             <a href="#problem" className="hover:text-teal-600 transition-colors">The Chaos</a>
             <a href="#how" className="hover:text-teal-600 transition-colors">How It Works</a>
-            <a href="#features" className="hover:text-teal-600 transition-colors">The Intelligence</a>
+            <a href="#features" className="hover:text-teal-600 transition-colors">AI Features</a>
             <a href="#pricing" className="hover:text-teal-600 transition-colors">Investment</a>
             <a href="#faq" className="hover:text-teal-600 transition-colors">FAQ</a>
             <a href="#contact" className="bg-slate-900 text-white px-7 py-3 rounded-xl hover:bg-teal-600 transition-all shadow-lg active:scale-95 text-[11px]">Request Demo</a>
@@ -139,15 +149,26 @@ const App: React.FC = () => {
         
         <div className="container mx-auto text-center">
           <div className="inline-flex items-center gap-3 px-5 py-2.5 bg-white shadow-sm border border-slate-200 rounded-full mb-10 group cursor-default">
-            <span className="flex h-2 w-2 rounded-full bg-teal-500 animate-ping"></span>
-            <span className="text-[11px] font-black text-slate-600 uppercase tracking-[0.2em]">Eliminating Retail Operational Chaos</span>
+            <BotIcon className="w-4 h-4 text-teal-600" />
+            <span className="text-[11px] font-black text-slate-600 uppercase tracking-[0.2em]">Sales • Inventory • Money • Issues</span>
           </div>
           <h1 className="text-6xl md:text-8xl font-black text-slate-900 leading-[0.9] mb-8 tracking-tighter">
-            Your POS tracks sales.<br /><span className="text-teal-600 italic">We track your profit.</span>
+            One{" "}
+            <span className="ai-border-anim inline-block rounded-xl px-3 py-1">
+              AI
+            </span>{" "}
+            for your whole store.
           </h1>
           <p className="text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto mb-12 leading-relaxed font-medium">
-            The first AI Operating System for independent retail. Automate reconciliation, stop shrinkage, and own your time.
+            RetailNexa tracks sales, inventory, money, and issues—automatically.
           </p>
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {["AI agents + workflows", "Real-time anomaly detection", "Auto-generated actions", "Explainable alerts"].map((tag) => (
+              <div key={tag} className="px-4 py-2 rounded-full bg-white/80 border border-slate-200 text-slate-700 text-xs font-black uppercase tracking-widest">
+                {tag}
+              </div>
+            ))}
+          </div>
           <div className="flex flex-col sm:flex-row gap-6 justify-center mb-24">
             <a href="#contact" className="bg-teal-600 text-white px-12 py-5 rounded-2xl font-black text-xl hover:bg-teal-700 transition-all shadow-[0_20px_40px_-10px_rgba(13,148,136,0.3)] hover:-translate-y-1 active:scale-95">Request a Demo</a>
             <a href="#how" className="bg-white text-slate-900 border-2 border-slate-200 px-12 py-5 rounded-2xl font-black text-xl hover:border-teal-500 hover:text-teal-600 transition-all active:scale-95 flex items-center justify-center gap-3">
@@ -258,8 +279,8 @@ const App: React.FC = () => {
               {
                 step: "02",
                 title: "Monitor in Real Time",
-                desc: "Track sales, inventory, and compliance with alerts that surface issues before they become losses.",
-                bullets: ["Missing/partial deposit alerts", "Shrinkage & anomaly flags", "License renewal reminders"]
+                desc: "RetailNexa tracks sales, inventory, and money in real time, and flags issues before they become losses.",
+                bullets: ["Missing/partial deposit alerts", "AI anomaly detection + shrinkage flags", "License renewal reminders"]
               },
               {
                 step: "03",
@@ -296,9 +317,9 @@ const App: React.FC = () => {
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end gap-10 mb-20">
             <div className="max-w-2xl">
-              <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter">Everything under one hood.</h2>
+              <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter">One AI for your whole store.</h2>
               <p className="text-xl text-slate-500 font-medium">
-                We've built a full-stack automation layer that handles the heavy lifting, so you can focus on being an entrepreneur.
+                RetailNexa tracks sales, inventory, money, and issues—automatically.
               </p>
             </div>
             <a href="#how" className="bg-slate-100 text-slate-900 px-8 py-4 rounded-xl font-black text-sm uppercase tracking-widest hover:bg-teal-50 hover:text-teal-600 transition-all">How It Works</a>
@@ -376,9 +397,9 @@ const App: React.FC = () => {
       <section id="pricing" className="py-32 px-6 bg-white relative">
         <div className="container mx-auto">
           <div className="text-center max-w-3xl mx-auto mb-24">
-            <div className="bg-teal-50 text-teal-600 text-[10px] font-black uppercase tracking-[0.3em] px-4 py-2 rounded-full mb-6 inline-block">Simple Monthly Plans</div>
+            <div className="bg-teal-50 text-teal-600 text-[10px] font-black uppercase tracking-[0.3em] px-4 py-2 rounded-full mb-6 inline-block">AI Pricing</div>
             <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tighter italic uppercase">Buy back your time.</h2>
-            <p className="text-xl text-slate-500 font-medium">Start small, then scale into full automation as you grow.</p>
+            <p className="text-xl text-slate-500 font-medium">Start small, then scale into AI-driven automation as you grow.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
@@ -388,10 +409,27 @@ const App: React.FC = () => {
                   <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-teal-600 text-white px-6 py-2 rounded-full text-xs font-black uppercase tracking-widest shadow-xl">Best Value</div>
                 )}
                 <h3 className="text-3xl font-black mb-2 italic tracking-tight">{plan.name}</h3>
+                {plan.originalPrice && (
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className={`text-sm font-black line-through ${plan.highlighted ? 'text-slate-400' : 'text-slate-400'}`}>
+                      {plan.originalPrice}
+                    </span>
+                    <span
+                      className={`text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full border ${
+                        plan.highlighted ? 'bg-teal-500/15 text-teal-300 border-teal-400/20' : 'bg-teal-50 text-teal-700 border-teal-200'
+                      }`}
+                    >
+                      {plan.promoLabel ?? "Offer"}
+                    </span>
+                  </div>
+                )}
                 <div className="flex items-baseline gap-2 mb-10">
                   <span className="text-6xl font-black tracking-tighter">{plan.price}</span>
                   <span className={`text-sm font-black uppercase tracking-widest ${plan.highlighted ? 'text-teal-400' : 'text-slate-500'}`}>/MO</span>
                 </div>
+                {plan.priceNote && (
+                  <div className={`-mt-6 mb-8 text-xs font-bold ${plan.highlighted ? 'text-slate-400' : 'text-slate-500'}`}>{plan.priceNote}</div>
+                )}
                 <ul className="space-y-6 mb-12">
                   {plan.features.map((feat, i) => (
                     <li key={i} className="flex gap-4 items-center text-sm font-bold">
@@ -467,7 +505,7 @@ const App: React.FC = () => {
 	          <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-transparent pointer-events-none"></div>
 	          <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-[100px]"></div>
 	          
-	          <h2 className="text-5xl md:text-8xl font-black mb-10 tracking-tighter leading-none italic uppercase">See RetailNexa<br /><span className="text-teal-500 italic lowercase">on your store data.</span></h2>
+	          <h2 className="text-5xl md:text-8xl font-black mb-10 tracking-tighter leading-none italic uppercase">See RetailNexa AI<br /><span className="text-teal-500 italic lowercase">on your store data.</span></h2>
 	          <p className="text-xl md:text-2xl mb-14 text-slate-400 max-w-3xl mx-auto font-medium leading-relaxed">
 	            Get a guided walkthrough and a clear rollout plan for your store — POS-agnostic, owner-friendly, automation-first.
 	          </p>
@@ -636,10 +674,13 @@ const App: React.FC = () => {
              <div className="col-span-2">
                 <div className="flex items-center gap-3 mb-8 group cursor-pointer">
                   <div className="w-12 h-12 bg-teal-600 rounded-xl flex items-center justify-center text-white font-black text-2xl italic">R</div>
-                  <span className="text-2xl font-black tracking-tighter text-slate-900">RetailNexa</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl font-black tracking-tighter text-slate-900">RetailNexa</span>
+                    <span className="px-2.5 py-1 rounded-full bg-slate-900 text-white text-[10px] font-black uppercase tracking-[0.25em]">AI</span>
+                  </div>
                 </div>
                 <p className="text-slate-500 max-w-sm font-medium leading-relaxed italic">
-                   The modern retail operating system that bridges the gap between sales and sanity — built for independent owners.
+                   One AI for your whole store. RetailNexa tracks sales, inventory, money, and issues—automatically.
                 </p>
              </div>
              <div>
